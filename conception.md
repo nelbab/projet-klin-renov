@@ -128,8 +128,8 @@ Cela garantit que les données échangées sont chiffrées, ce qui protège cont
 
 Vérification du fichier .htaccess situé à la racine du site avec la présence des lignes suivantes:
  
-RewriteEngine On
-RewriteCond %{HTTPS} off
+RewriteEngine On <br />
+RewriteCond %{HTTPS} off <br />
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 Cela redirige tout le trafic HTTP vers HTTPS.
@@ -139,5 +139,6 @@ Cela redirige tout le trafic HTTP vers HTTPS.
     • .htaccess assure une redirection correcte, empêchant les erreurs 404 lors du rechargement ou des accès directs.
 
 ## 5. 🎯 Conclusion
-En combinant EmailJS pour l'envoi d'e-mails sans back-end et React Helmet avec un fichier .htaccess bien configuré pour le SEO, vous obtenez une application React performante et conviviale pour les utilisateurs comme pour les moteurs de recherche.
+En combinant EmailJS pour l'envoi d'e-mails sans back-end et React Helmet avec un fichier .htaccess bien configuré pour le SEO, 
+vous obtenez une application React performante et conviviale pour les utilisateurs comme pour les moteurs de recherche.<br />
 Mon site web fonctionne de manière optimale en HTTPS sur LWS. 
