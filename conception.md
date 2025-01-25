@@ -14,8 +14,6 @@ EmailJS est un service qui permet d'envoyer des e-mails directement depuis une a
 ### Mise en œuvre :
 
 ####    . Installation d'EmailJS Ajoutez EmailJS à votre projet avec NPM :
-       bash
-       Copier le code
        npm install emailjs-com
 
 ####    . Configuration
