@@ -24,46 +24,46 @@ EmailJS est un service qui permet d'envoyer des e-mails directement depuis une a
 
 ####    . Code d'intégration - Exemple de code pour envoyer un e-mail :
 
-       import React, { useState } from "react";
-       import emailjs from "emailjs-com";
-       
-       const ContactForm = () => {
-         const [formData, setFormData] = useState({
-           name: "",
-           email: "",
-           message: ""
-         });
-       
-         const handleChange = (e) => {
-           setFormData({ ...formData, [e.target.name]: e.target.value });
-         };
-       
-         const handleSubmit = (e) => {
-           e.preventDefault();
-           emailjs.send(
-             "your_service_id", // Remplacez par votre Service ID
-             "your_template_id", // Remplacez par votre Template ID
-             formData,
-             "your_user_id" // Remplacez par votre User ID
-           )
-           .then((response) => {
-             console.log("Email envoyé avec succès !", response.status, response.text);
-           })
-           .catch((err) => {
-             console.error("Erreur lors de l'envoi :", err);
-           });
-         };
-       
-         return (
-           <form onSubmit={handleSubmit}>
-             <input type="text" name="name" placeholder="Votre nom" onChange={handleChange} required />
-             <input type="email" name="email" placeholder="Votre e-mail" onChange={handleChange} required />
-             <textarea name="message" placeholder="Votre message" onChange={handleChange} required />
-             <button type="submit">Envoyer</button>
-           </form>
-         );
-       };
-       export default ContactForm;
+    import React, { useState } from "react";
+    import emailjs from "emailjs-com";
+    
+    const ContactForm = () => {
+      const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+      });
+    
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        emailjs.send(
+          "your_service_id", // Remplacez par votre Service ID
+          "your_template_id", // Remplacez par votre Template ID
+          formData,
+          "your_user_id" // Remplacez par votre User ID
+        )
+        .then((response) => {
+          console.log("Email envoyé avec succès !", response.status, response.text);
+        })
+        .catch((err) => {
+          console.error("Erreur lors de l'envoi :", err);
+        });
+      };
+    
+      return (
+        <form onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Votre nom" onChange={handleChange} required />
+          <input type="email" name="email" placeholder="Votre e-mail" onChange={handleChange} required />
+          <textarea name="message" placeholder="Votre message" onChange={handleChange} required />
+          <button type="submit">Envoyer</button>
+        </form>
+      );
+    };
+    export default ContactForm;
 
 
 ## 2. 💡 Résolution des problèmes de SEO dans React
@@ -81,23 +81,23 @@ Mise en œuvre avec React Helmet :
 
 ####    2. Utilisation dans un composant Exemple d'utilisation :
 
-       import React from "react";
-       import { Helmet } from "react-helmet-async";
-       
-       const HomePage = () => {
-         return (
-           <div>
-             <Helmet>
-               <title>Accueil - Mon Site React</title>
-               <meta name="description" content="Bienvenue sur mon site React optimisé pour le SEO." />
-             </Helmet>
-             <h1>Bienvenue</h1>
-             <p>Ceci est la page d'accueil.</p>
-           </div>
-         );
-       };
-       
-       export default HomePage;
+    import React from "react";
+    import { Helmet } from "react-helmet-async";
+    
+    const HomePage = () => {
+      return (
+        <div>
+          <Helmet>
+            <title>Accueil - Mon Site React</title>
+            <meta name="description" content="Bienvenue sur mon site React optimisé pour le SEO." />
+          </Helmet>
+          <h1>Bienvenue</h1>
+          <p>Ceci est la page d'accueil.</p>
+        </div>
+      );
+    };
+    
+    export default HomePage;
 
 ### Solution 2 : Paramétrer le fichier .htaccess
 
@@ -129,9 +129,9 @@ Cela garantit que les données échangées sont chiffrées, ce qui protège cont
 
 Vérification du fichier .htaccess situé à la racine du site avec la présence des lignes suivantes:
  
-RewriteEngine On <br />
-RewriteCond %{HTTPS} off <br />
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] <br />
+    RewriteEngine On <br />
+    RewriteCond %{HTTPS} off <br />
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] <br />
 
 Cela redirige tout le trafic HTTP vers HTTPS.
 
