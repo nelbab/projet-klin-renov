@@ -107,8 +107,8 @@ Mon site React est déployé sur un serveur Apache, il est essentiel de configur
 Modifié le fichier .htaccess à la racine de mon projet build.
 
 #####    2. Configuration typique Ajoutez les lignes suivantes dans le fichier .htaccess :
-    apache
-    Ajout des lignes suivantes :
+Ajout des lignes suivantes dans le fichier .htaccess : 
+
     RewriteRule ^Devis/?$  / [NC,L]
     RewriteRule ^TraitementToiture/?$  / [NC,L]
     RewriteRule ^Couverture/?$  / [NC,L]
@@ -117,7 +117,8 @@ Modifié le fichier .htaccess à la racine de mon projet build.
     RewriteRule ^Realisations/?$  / [NC,L]
     RewriteRule ^Maintenance/?$  / [NC,L]
     ErrorDocument 404 /
-    Cela garantit que toutes les routes sont redirigées vers index.html pour que React gère le routage.
+
+Cela garantit que toutes les routes sont redirigées vers index.html pour que React gère le routage.
 
 ## 3. 🛠️ Sécurité
 
@@ -130,7 +131,7 @@ Vérification du fichier .htaccess situé à la racine du site avec la présence
  
 RewriteEngine On <br />
 RewriteCond %{HTTPS} off <br />
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] <br />
 
 Cela redirige tout le trafic HTTP vers HTTPS.
 
