@@ -122,7 +122,7 @@ Cela garantit que toutes les routes sont redirigées vers index.html pour que Re
 
 ## 3. 🛠️ Sécurité
 
-J'ai activé HTTPS sur votre hébergeur LWS, mon site web est bien configuré pour utiliser HTTPS de manière optimale. LWS fournit généralement une interface simple pour activer un certificat SSL/TLS. <br>
+J'ai activé HTTPS sur mon hébergeur LWS, mon site web est bien configuré pour utiliser HTTPS de manière optimale. LWS fournit une interface simple pour activer un certificat SSL/TLS. <br>
 Cela garantit que les données échangées sont chiffrées, ce qui protège contre les interceptions ou attaques potentielles.
 
 ### Vérifier l'activation du certificat SSL
