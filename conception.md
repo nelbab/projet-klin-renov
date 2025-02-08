@@ -65,8 +65,31 @@ EmailJS est un service qui permet d'envoyer des e-mails directement depuis une a
     };
     export default ContactForm;
 
+## 🔒 2. Sécurisation des données
 
-## 2. 💡 Résolution des problèmes de SEO dans React
+### Yup et formik
+
+<b>Yup</b> est un constructeur de schéma pour l'analyse et la validation des valeurs pendant l'exécution. <br />
+- Définissez un schéma, transformez une valeur pour qu'elle corresponde, affirmez la structure d'une valeur existante, ou les deux.<br /> 
+- Les schémas Yup sont extrêmement expressifs et permettent de modéliser des validations complexes et interdépendantes, ainsi que des transformations de valeurs.
+- Schéma pour exclure les caratères < et > :<br />
+``` 
+text: Yup.string()
+    .matches(/^[^<>]*$/, "Les caractères '<' et '>' sont interdits")
+    .required("Ce champ est requis"),
+``` 
+- Schéma pour contrôler un numéro de téléphone français sans espace en version national :<br />
+``` 
+phone: Yup.string()
+    .matches(/^0[1-9]\d{8}$/, "Le numéro doit avoir 10 chiffres et commencer par 0")
+    .required("Le numéro de téléphone est requis"),
+```
+La bibliothèque <b>Formik</b> est une bibliothèque populaire de gestion de formulaires pour React.<br />
+- Formik est  conçu pour gérer des formulaires avec une validation complexe ou simple.<br />
+- Formik supporte la validation synchrone et asynchrone au niveau du formulaire et du champ.<br /> 
+- Le hook personnalisé useFormik aide à simplifier le processus de création et de gestion de formulaires dans les applications React en gérant l'état du formulaire, la validation et la soumission du formulaire.<br />
+
+## 3. 💡 Résolution des problèmes de SEO dans React
 
 React, en tant que framework SPA (Single Page Application), peut poser des défis pour le SEO car la plupart des moteurs de recherche ont des difficultés à indexer les contenus générés dynamiquement.
 
@@ -120,7 +143,7 @@ Ajout des lignes suivantes dans le fichier .htaccess :
 
 Cela garantit que toutes les routes sont redirigées vers index.html pour que React gère le routage.
 
-## 3. 🛠️ Sécurité
+## 4. 🛠️ Sécurité
 
 J'ai activé HTTPS sur mon hébergeur LWS, mon site web est bien configuré pour utiliser HTTPS de manière optimale. LWS fournit une interface simple pour activer un certificat SSL/TLS. <br>
 Cela garantit que les données échangées sont chiffrées, ce qui protège contre les interceptions ou attaques potentielles.
@@ -135,11 +158,11 @@ Vérification du fichier .htaccess situé à la racine du site avec la présence
 
 Cela redirige tout le trafic HTTP vers HTTPS.
 
-## 4. 📝 Avantages de ces solutions
+## 5. 📝 Avantages de ces solutions
     • React Helmet permet une gestion fine des balises meta pour chaque page, crucial pour le SEO.
     • .htaccess assure une redirection correcte, empêchant les erreurs 404 lors du rechargement ou des accès directs.
 
-## 5. 🎯 Conclusion
+## 6. 🎯 Conclusion
 En combinant EmailJS pour l'envoi d'e-mails sans back-end et React Helmet avec un fichier .htaccess bien configuré pour le SEO, 
 vous obtenez une application React performante et conviviale pour les utilisateurs comme pour les moteurs de recherche.<br />
 Mon site web fonctionne de manière optimale en HTTPS sur LWS. 
