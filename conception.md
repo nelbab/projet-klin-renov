@@ -1,7 +1,9 @@
-# <h1>🏠 Conception 👷🏻‍♂️</h1>
+# 🏠 Conception 👷🏻‍♂️
 
 Créer un site en React nécessite de résoudre plusieurs problématiques courantes comme l'envoi d'e-mails sans back-end et l'optimisation du SEO. <br>
 Voici une explication détaillée pour ces deux aspects :
+
+<br />
 
 ## 1. 📧 Envoi d'e-mails sans back-end avec EmailJS
 
@@ -13,16 +15,16 @@ EmailJS est un service qui permet d'envoyer des e-mails directement depuis une a
 
 ### Mise en œuvre :
 
-####    . Installation d'EmailJS Ajoutez EmailJS à votre projet avec NPM :
+####   a. Installation d'EmailJS Ajoutez EmailJS à votre projet avec NPM :
        npm install emailjs-com
 
-####    . Configuration
+####   b. Configuration
         ◦ Créez un compte sur EmailJS.
         ◦ Configurez un service de messagerie (ex : Gmail).
         ◦ Créez un modèle d'e-mail avec les champs nécessaires (par ex. : from_name, message, etc.).
         ◦ Récupérez votre User ID et les identifiants de service et de modèle.
 
-####    . Code d'intégration - Exemple de code pour envoyer un e-mail :
+####   c. Code d'intégration - Exemple de code pour envoyer un e-mail :
 
     import React, { useState } from "react";
     import emailjs from "emailjs-com";
@@ -65,6 +67,8 @@ EmailJS est un service qui permet d'envoyer des e-mails directement depuis une a
     };
     export default ContactForm;
 
+<br />
+
 ## 🔒 2. Sécurisation des données
 
 ### Yup et formik
@@ -89,6 +93,8 @@ La bibliothèque <b>Formik</b> est une bibliothèque populaire de gestion de for
 - Formik supporte la validation synchrone et asynchrone au niveau du formulaire et du champ.<br /> 
 - Le hook personnalisé useFormik aide à simplifier le processus de création et de gestion de formulaires dans les applications React en gérant l'état du formulaire, la validation et la soumission du formulaire.<br />
 
+<br />
+
 ## 3. 💡 Résolution des problèmes de SEO dans React
 
 React, en tant que framework SPA (Single Page Application), peut poser des défis pour le SEO car la plupart des moteurs de recherche ont des difficultés à indexer les contenus générés dynamiquement.
@@ -99,10 +105,10 @@ React Helmet est une bibliothèque permettant de gérer dynamiquement les balise
 
 Mise en œuvre avec React Helmet :
 
-####    1. Installation Installez React Helmet :
+####    a. Installation Installez React Helmet :
        npm install react-helmet-async
 
-####    2. Utilisation dans un composant Exemple d'utilisation :
+####    b. Utilisation dans un composant Exemple d'utilisation :
 
     import React from "react";
     import { Helmet } from "react-helmet-async";
@@ -126,10 +132,10 @@ Mise en œuvre avec React Helmet :
 
 Mon site React est déployé sur un serveur Apache, il est essentiel de configurer un fichier .htaccess pour gérer les routes et permettre aux moteurs de recherche d'accéder correctement aux pages.
 
-#####    1. Modification du fichier .htaccess 
+#####    a. Modification du fichier .htaccess 
 Modifié le fichier .htaccess à la racine de mon projet build.
 
-#####    2. Configuration typique Ajoutez les lignes suivantes dans le fichier .htaccess :
+#####    b. Configuration typique Ajoutez les lignes suivantes dans le fichier .htaccess :
 Ajout des lignes suivantes dans le fichier .htaccess : 
 
     RewriteRule ^Devis/?$  / [NC,L]
@@ -142,6 +148,8 @@ Ajout des lignes suivantes dans le fichier .htaccess :
     ErrorDocument 404 /
 
 Cela garantit que toutes les routes sont redirigées vers index.html pour que React gère le routage.
+
+<br />
 
 ## 4. 🛠️ Sécurité
 
@@ -158,9 +166,13 @@ Vérification du fichier .htaccess situé à la racine du site avec la présence
 
 Cela redirige tout le trafic HTTP vers HTTPS.
 
+<br />
+
 ## 5. 📝 Avantages de ces solutions
     • React Helmet permet une gestion fine des balises meta pour chaque page, crucial pour le SEO.
     • .htaccess assure une redirection correcte, empêchant les erreurs 404 lors du rechargement ou des accès directs.
+
+<br />
 
 ## 6. 🎯 Conclusion
 En combinant EmailJS pour l'envoi d'e-mails sans back-end et React Helmet avec un fichier .htaccess bien configuré pour le SEO, 
